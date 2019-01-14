@@ -1,0 +1,42 @@
+group 'org.javafreedom.kairosdb'
+version currentVersion
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+    classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'com.jfrog.bintray'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile "org.kairosdb:kairosdb:1.2.1-1"
+}
+
+bintray {
+  user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+  key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+  configurations = ['archives']
+  pkg {
+    repo = 'maven'
+    name = 'kairosdb-datatype-map'
+    licenses = ['Apache-2.0']
+    websiteUrl = 'https://github.com/triplem/kairosdb-datatype-map'
+    vcsUrl = 'https://github.com/triplem/kairosdb-datatype-map.git'
+    desc = 'Flexible Datatypes for KairosDB'
+    version {
+      name = '0.0.1'
+      desc = 'Kairosdb Datatypes'
+    }
+  }
+}
