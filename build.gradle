@@ -46,7 +46,6 @@ scmVersion {
 
   hooks {
     pre 'fileUpdate', [file: 'README.md', pattern: {v, c -> /version: $v/}, replacement: {v, c -> "version: $v"}]
-    pre {context -> bintrayUpload(context)}
   }
 
   tag {
