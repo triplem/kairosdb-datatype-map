@@ -11,8 +11,7 @@ import java.util.Map;
 
 public class MapDatapointFactory implements DataPointFactory {
 
-    private static String DST_MAP = "map";
-
+    private static String DST_TYPE = "map";
 
     @Override
     public DataPoint getDataPoint(long timestamp, JsonElement json) throws IOException {
@@ -50,6 +49,6 @@ public class MapDatapointFactory implements DataPointFactory {
 
     @Override
     public String getDataStoreType() {
-        return DST_MAP;
+        return DST_TYPE;
     }
 }

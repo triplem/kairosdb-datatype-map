@@ -12,6 +12,7 @@ import java.util.Map;
 public class MultiTenantMapDatapoint extends MapDatapoint {
 
     private static final String API_TYPE = "multi-tenant-map";
+    private static final String DST_TYPE = "multi-tenant-map";
 
     private String user;
 
@@ -59,6 +60,11 @@ public class MultiTenantMapDatapoint extends MapDatapoint {
     @Override
     public String getApiDataType() {
         return API_TYPE;
+    }
+
+    @Override
+    public String getDataStoreDataType() {
+        return DST_TYPE;
     }
 
     public String getUser() {

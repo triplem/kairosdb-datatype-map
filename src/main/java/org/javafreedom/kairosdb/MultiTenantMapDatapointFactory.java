@@ -10,9 +10,10 @@ import java.util.Map;
 
 public class MultiTenantMapDatapointFactory extends MapDatapointFactory {
 
+    private static final String DST_TYPE = "multi-tenant-map";
+
     @Override
     public DataPoint getDataPoint(long timestamp, JsonElement json) throws IOException {
-        System.out.println("json: " + json);
         if (json.isJsonObject()) {
             JsonObject obj = (JsonObject) json;
             double value = obj.get("value").getAsDouble();
@@ -40,4 +41,10 @@ public class MultiTenantMapDatapointFactory extends MapDatapointFactory {
         Gson gson = new GsonBuilder().create();
         return gson.fromJson(fields, Map.class);
     }
+
+    @Override
+    public String getDataStoreType() {
+        return DST_TYPE;
+    }
+
 }

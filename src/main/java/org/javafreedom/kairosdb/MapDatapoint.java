@@ -13,7 +13,6 @@ public class MapDatapoint extends DataPointHelper {
     private static final String API_TYPE = "map";
     private static final String DST_TYPE = "map";
 
-
     private Double value;
     private Map<String, Object> fields;
 
