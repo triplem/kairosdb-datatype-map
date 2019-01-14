@@ -1,3 +1,5 @@
+Version: 1.1.0
+
 A dynamic datapoint for kairosdb
 
 This datapoint provides flexilbility, in that it stores values in a Map (which is stored as a JSON Object in KairosDB).  Doing this could lead to poor performance (not tested yet), in that every datapoint has to get de-serialized on reads. 
@@ -10,3 +12,10 @@ gradle build bintrayUpload -PbintrayUser=<USER> -PbintrayApiKey=<API-KEY>
 
 https://axion-release-plugin.readthedocs.io/
 
+
+export BINTRAY_USER=<USER>
+export BINTRAY_API_KEY=<API-KEY>
+gradle verifyRelease - check if all requirements are set
+gradle createRelease - tag current version
+gradle pushRelease - push changes to github
+gradle currentVersion - show currentVersion
