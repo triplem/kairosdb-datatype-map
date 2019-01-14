@@ -1,5 +1,4 @@
 group 'org.javafreedom.kairosdb'
-version currentVersion
 
 buildscript {
   repositories {
@@ -7,13 +6,14 @@ buildscript {
   }
 
   dependencies {
-    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
     classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
+    classpath "pl.allegro.tech.build:axion-release-plugin:1.10.0"
   }
 }
 
 apply plugin: 'java'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'pl.allegro.tech.build.axion-release'
 
 repositories {
   jcenter()
@@ -40,3 +40,14 @@ bintray {
     }
   }
 }
+
+scmVersion {
+  ignoreUncommittedChanges = false
+
+  tag {
+    prefix = 'release'
+  }
+}
+version scmVersion.version
+
+

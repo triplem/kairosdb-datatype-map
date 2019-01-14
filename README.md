@@ -8,3 +8,5 @@ publish:
 
 gradle build bintrayUpload -PbintrayUser=<USER> -PbintrayApiKey=<API-KEY>
 
+https://axion-release-plugin.readthedocs.io/
+
