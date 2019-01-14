@@ -8,14 +8,12 @@ To provide an easy way to implement multi-tenant stuff, the user is stored in th
 
 publish:
 
-gradle build bintrayUpload -PbintrayUser=<USER> -PbintrayApiKey=<API-KEY>
-
 https://axion-release-plugin.readthedocs.io/
-
 
 export BINTRAY_USER=<USER>
 export BINTRAY_API_KEY=<API-KEY>
 gradle verifyRelease - check if all requirements are set
 gradle createRelease - tag current version
+gradle build bintrayUpload - upload release to bintray
 gradle pushRelease - push changes to github
 gradle currentVersion - show currentVersion
